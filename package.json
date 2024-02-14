@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/edwarbarrera/nodeJsOcr/issues"
   },
-  "homepage": "https://github.com/edwarbarrera/nodeJsOcr#readme"
+  "homepage": "https://github.com/edwarbarrera/nodeJsOcr#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
