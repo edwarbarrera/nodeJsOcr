@@ -20,7 +20,7 @@ const errorHandler = error => {
         throw error;
     }
 
- const address = server.adress();
+ const address = server.address();
  const bind = typeof address === 'string' ? 'pipe' + address : 'port: '+ port;
 
  switch(error.code){
@@ -44,7 +44,7 @@ server.on('error', errorHandler);
 server.on('listening', ()=>{
     const address = server.address();
     const bind = typeof address === 'string' ? 'pipe' + address : 'guichet: '+ port;
-    console.log('Ecoutons un peu ce : ' + bind);
+    console.log('Ecoutons un peu ce  ' + bind);
     
 })
 
