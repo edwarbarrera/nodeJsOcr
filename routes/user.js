@@ -11,6 +11,7 @@ router.use((req,res, next)=>{
 }
 );
 
-router.post('/signup/:user', userCtrl.singup);
+router.post('/signup', userCtrl.singup);
+router.post('/login', userCtrl.login);
 
 module.exports= router

@@ -15,8 +15,8 @@ mongoose.connect('mongodb+srv://papyverveine:lasaucedemangues@cluster0.fyzqgxj.m
 
 app.use(bodyParser.json());
 
-app.use('/api/stuff', stuffRouter)
-app.use('/api/auth', userRouter)
+app.use('/api/stuff', stuffRouter);
+app.use('/api/auth', userRouter);
 
 
 

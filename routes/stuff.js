@@ -1,8 +1,8 @@
 const express= require('express');
-const router =express.Router();
-const Thing = require('../models/Thing');
-const stuffCtrl = require('../controllers/stuff')
 
+const router =express.Router();
+const stuffCtrl = require('../controllers/stuff');
+const auth = require('../middelware/auth');
 
 router.use((req,res, next)=>{
     res.setHeader('Access-Control-Allow-Origin', '*')
@@ -12,11 +12,11 @@ router.use((req,res, next)=>{
 }
 );
 
-router.post('/', stuffCtrl.createThing);
-router.put('/:id', stuffCtrl.updateOne);
-router.get('/:id', stuffCtrl.findOne);
-router.delete('/:id', stuffCtrl.deleteOne);
-router.get('/', stuffCtrl.getAll);
+router.post('/', auth, stuffCtrl.createThing);
+router.put('/:id', auth, stuffCtrl.updateOne);
+router.get('/:id', auth, stuffCtrl.findOne);
+router.delete('/:id', auth, stuffCtrl.deleteOne);
+router.get('/', auth, stuffCtrl.getAll);
 
 
 module.exports = router;
