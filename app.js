@@ -3,7 +3,9 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const stuffRouter = require('./routes/stuff');
-const userRouter = require('./routes/user')
+const userRouter = require('./routes/user');
+const path = require('path');
+const fs = require('fs');
 
 
 mongoose.connect('mongodb+srv://papyverveine:lasaucedemangues@cluster0.fyzqgxj.mongodb.net/?retryWrites=true&w=majority',
@@ -15,8 +17,12 @@ mongoose.connect('mongodb+srv://papyverveine:lasaucedemangues@cluster0.fyzqgxj.m
 
 app.use(bodyParser.json());
 
+
+
 app.use('/api/stuff', stuffRouter);
+// app.use('/part-four/all-stuff', stuffRouter);
 app.use('/api/auth', userRouter);
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 
 
